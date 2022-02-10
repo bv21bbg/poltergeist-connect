@@ -26,7 +26,7 @@ export default {
   methods: {
     handleConnectBtnClick() {
       if (!this.phaLink) {
-        this.phaLink = new PhantasmaLink("Blood Rune Token Sale");
+        this.phaLink = new PhantasmaLink("BloodRune");
       }
       try {
         this.phaLink.login(
@@ -34,12 +34,9 @@ export default {
             console.log("success", success);
             this.isConnected = true;
           },
-          (p) => {
-            console.error(p);
-          },
-          (x) => {
-            console.debug(x);
-          }
+          2,
+          "phantasma",
+          "poltergeist"
         );
       } catch (e) {
         console.error(e);
